@@ -25,7 +25,6 @@ class Order {
   client: Client
 
   @ManyToOne(() => Product, product => product.order)
-  @JoinTable()
   @JoinColumn({ name: 'id_product' })
   product: Product
 

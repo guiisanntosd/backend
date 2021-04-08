@@ -19,7 +19,9 @@ class Product {
   @Column()
   value: number
 
-  @OneToMany(() => Order, order => order.product)
+  @OneToMany(() => Order, order => order.product,{
+    cascade: ['insert', 'update']
+  })
   @JoinColumn({ name: 'id_product' })
   order: Order[]
 
