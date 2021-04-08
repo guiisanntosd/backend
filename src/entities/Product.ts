@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm"
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm"
+import { Order } from "./Order"
 
 @Entity('products')
 class Product {
@@ -17,6 +18,9 @@ class Product {
 
   @Column()
   value: number
+
+  @OneToMany(() => Order, order => order.product)
+  order: Order
 
 }
 
