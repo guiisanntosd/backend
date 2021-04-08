@@ -1,7 +1,7 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm"
 
-@Entity('clients')
-class Client {
+@Entity('products')
+class Product {
 
   @PrimaryGeneratedColumn('increment')
   id: number
@@ -16,8 +16,8 @@ class Client {
   size: string
 
   @Column()
-  value: string
+  value: number
 
 }
 
-export { Client }
+export { Product }
