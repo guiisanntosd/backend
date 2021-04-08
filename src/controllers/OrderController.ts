@@ -5,7 +5,22 @@ import pdf from 'html-pdf'
 
 class OrderController {
   async report(req: Request, res: Response) {
-    
+    const repository = getCustomRepository(OrdersRepository)
+    const { id } = req.params
+
+    const order = await repository.findOneOrFail(id, {
+      relations: ['client', 'product'],
+      where: { id }
+    }).catch(() => {
+        return res.json({
+          error: 'Pedido não encontrado!'
+        })
+      }
+    )
+
+    pdf.create
+
+    return res.status(200).json(order)
   }
 
   async index(req: Request, res: Response) {
