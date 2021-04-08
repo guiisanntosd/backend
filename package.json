@@ -3,13 +3,14 @@
   "version": "0.0.1",
   "description": "BACKEND",
   "scripts": {
-    "start": "ts-node --inspect --transpile-only --ignore-watch node_modules src/server.ts",
-    "typeorm": "ts-node node_modules/typeorm/cli.js"
+    "start": "ts-node --files -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules src/server.ts",
+    "typeorm": "ts-node -r tsconfig-paths/register node_modules/typeorm/cli.js"
   },
   "devDependencies": {
     "@types/express": "^4.17.11",
     "@types/node": "^8.0.29",
     "ts-node": "3.3.0",
+    "tsconfig-paths": "^3.9.0",
     "typescript": "3.3.3333"
   },
   "dependencies": {

@@ -1,4 +1,3 @@
-import { SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } from "constants";
 import {MigrationInterface, QueryRunner, Table} from "typeorm";
 
 export class CreateProductsTable1617856932659 implements MigrationInterface {
