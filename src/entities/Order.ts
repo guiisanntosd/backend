@@ -1,7 +1,6 @@
-import { Column, CreateDateColumn, Entity, JoinColumn, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, JoinColumn, JoinTable, ManyToOne, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Client } from "./Client";
 import { Product } from "./Product";
-
 
 @Entity('order')
 class Order {
@@ -22,11 +21,13 @@ class Order {
   form_of_payment: string
 
   @OneToOne(() => Client)
-  @JoinColumn()
+  @JoinColumn({ name: 'id_client' })
   client: Client
 
-  @OneToMany(() => Product, product => product.order)
-  product: Product[]
+  @ManyToOne(() => Product, product => product.order)
+  @JoinTable()
+  @JoinColumn({ name: 'id_product' })
+  product: Product
 
 }
 

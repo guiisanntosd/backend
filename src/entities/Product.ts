@@ -1,4 +1,4 @@
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm"
+import { Column, Entity, JoinColumn, OneToMany, PrimaryGeneratedColumn } from "typeorm"
 import { Order } from "./Order"
 
 @Entity('products')
@@ -20,7 +20,8 @@ class Product {
   value: number
 
   @OneToMany(() => Order, order => order.product)
-  order: Order
+  @JoinColumn({ name: 'id_product' })
+  order: Order[]
 
 }
 
