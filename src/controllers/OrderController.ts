@@ -1,10 +1,13 @@
 import { Request, Response } from "express";
 import { getCustomRepository } from "typeorm";
-import { Order } from "../entities/Order";
-import { Product } from "../entities/Product";
 import { OrdersRepository } from "../repositories/OrdersRepository";
+import pdf from 'html-pdf'
 
 class OrderController {
+  async report(req: Request, res: Response) {
+    
+  }
+
   async index(req: Request, res: Response) {
     const repository = getCustomRepository(OrdersRepository)
 
