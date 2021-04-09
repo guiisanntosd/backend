@@ -54,7 +54,7 @@ class OrderController {
         <p style='color: #666 ;font-size: 12pt; margin: 0;'> ${variable.email} </p>
       </div>
     `
-    pdf.create(conteudo, {}).toFile(path.join(__dirname, '..', '..', `uploads/report.pdf`), (err, res) => {
+    pdf.create(conteudo, {}).toFile(path.join(__dirname, '..', '..', `uploads/${Date.now()}report.pdf`), (err, res) => {
       if(err) {
         console.log('erro')
       }
