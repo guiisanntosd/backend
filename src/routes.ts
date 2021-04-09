@@ -16,7 +16,7 @@ router.get('/pedidos/:id', OrderController.show)
 router.post('/clientes', ClientsController.create)
 router.post('/produtos', ProductsController.create)
 router.post('/pedidos', OrderController.create)
-// router.post('/pedidos/:id/report', OrderController.report)
+router.post('/pedidos/:id/report', OrderController.report)
 router.post('/pedidos/:id/sendmail', OrderController.sendmail)
 
 router.put('/clientes/:id', ClientsController.update)
