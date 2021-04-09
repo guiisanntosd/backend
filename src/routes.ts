@@ -16,7 +16,8 @@ router.get('/pedidos/:id', OrderController.show)
 router.post('/clientes', ClientsController.create)
 router.post('/produtos', ProductsController.create)
 router.post('/pedidos', OrderController.create)
-router.post('/pedidos/:id/report', OrderController.report)
+// router.post('/pedidos/:id/report', OrderController.report)
+router.post('/pedidos/:id/sendmail', OrderController.sendmail)
 
 router.put('/clientes/:id', ClientsController.update)
 router.put('/produtos/:id', ProductsController.update)
@@ -25,7 +26,5 @@ router.put('/pedidos/:id', OrderController.update)
 router.delete('/clientes/:id', ClientsController.delete)
 router.delete('/produtos/:id', ProductsController.delete)
 router.delete('/pedidos/:id', OrderController.delete)
-
-
 
 export { router }
